@@ -15,8 +15,8 @@ version 3 of the License, or (at your option) any later version.
 @license GPL-3.0+ <https://github.com/KZen-networks/centipede/blob/master/LICENSE>
 */
 use curv::BigInt;
-use curv::elliptic::curves::secp256_k1::GE;
-use curv::elliptic::curves::secp256_k1::FE;
+use curv::elliptic::curves::p256::GE;
+use curv::elliptic::curves::p256::FE;
 use curv::cryptographic_primitives::proofs::sigma_correct_homomorphic_elgamal_encryption_of_dlog::{HomoELGamalDlogProof,HomoElGamalDlogWitness,HomoElGamalDlogStatement};
 use curv::cryptographic_primitives::proofs::sigma_correct_homomorphic_elgamal_enc::{HomoELGamalProof,HomoElGamalWitness,HomoElGamalStatement};
 use curv::cryptographic_primitives::hashing::hash_sha512::HSha512;
@@ -303,8 +303,8 @@ impl Proof {
 
 #[cfg(test)]
 mod tests {
-    use curv::elliptic::curves::secp256_k1::FE;
-    use curv::elliptic::curves::secp256_k1::GE;
+    use curv::elliptic::curves::p256::FE;
+    use curv::elliptic::curves::p256::GE;
     use curv::elliptic::curves::traits::*;
     use juggling::proof_system::*;
     use juggling::segmentation::Msegmentation;
