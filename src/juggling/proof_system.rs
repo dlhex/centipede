@@ -51,16 +51,16 @@ pub struct Witness {
 #[derive(Serialize, Deserialize)]
 pub struct Proof {
     pub bulletproof: RangeProof,
-    pub elgamal_enc: Vec<HomoELGamalProof<curv::elliptic::curves::secp256_k1::GE>>,
-    pub elgamal_enc_dlog: HomoELGamalDlogProof<curv::elliptic::curves::secp256_k1::GE>,
+    pub elgamal_enc: Vec<HomoELGamalProof<curv::elliptic::curves::p256::GE>>,
+    pub elgamal_enc_dlog: HomoELGamalDlogProof<curv::elliptic::curves::p256::GE>,
 }
 
 impl Proof {
     pub fn prove(
         w: &Witness,
         c: &Helgamalsegmented,
-        G: &curv::elliptic::curves::secp256_k1::GE,
-        Y: &curv::elliptic::curves::secp256_k1::GE,
+        G: &curv::elliptic::curves::p256::GE,
+        Y: &curv::elliptic::curves::p256::GE,
         segment_size: &usize,
     ) -> Proof {
         // bulletproofs:
